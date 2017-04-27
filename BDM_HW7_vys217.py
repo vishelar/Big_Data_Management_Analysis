@@ -30,8 +30,8 @@ def filter_recs_dist(splitIndex, iterator):
 sc = SparkContext()                
 spark = HiveContext(sc)
 
-yellow = sc.textFile('/tmp/yellow.csv.gz')
-citibike = sc.textFile('/tmp/citibike.csv')
+yellow = sc.textFile('/tmp/yellow.csv.gz').cache()
+citibike = sc.textFile('/tmp/citibike.csv').cache()
 
 cb = citibike.mapPartitionsWithIndex(f)
 yd = yellow.mapPartitionsWithIndex(filter_recs_dist)
