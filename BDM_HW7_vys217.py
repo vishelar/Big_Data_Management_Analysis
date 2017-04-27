@@ -1,7 +1,8 @@
-from pyspark import SparkContext as sc
+#from pyspark import SparkContext
 from datetime import date, datetime
 from datetime import timedelta
 from geopy.distance import vincenty
+from pyspark.sql import HiveContext
 
 def f(splitIndex, iterator): 
     if splitIndex == 0:
