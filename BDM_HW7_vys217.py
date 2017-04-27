@@ -1,4 +1,4 @@
-sc
+from pyspark import SparkContext as sc
 from datetime import date, datetime
 from datetime import timedelta
 import pyproj
