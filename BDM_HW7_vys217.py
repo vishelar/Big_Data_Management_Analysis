@@ -13,7 +13,7 @@ def f(splitIndex, iterator):
             a = datetime.strptime(row[3], "%Y-%m-%d %H:%M:%S+%f")
             yield a, row[0]
             
- def cal_dist(origin, destination):
+def cal_dist(origin, destination):
     lat1, lon1 = origin
     lat2, lon2 = destination
     
