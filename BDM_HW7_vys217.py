@@ -1,5 +1,5 @@
-#from pyspark import SparkContext
-sc
+from pyspark import SparkContext
+from pyspark.sql import HiveContext
 from datetime import date, datetime
 from datetime import timedelta
 from geopy.distance import vincenty
@@ -26,7 +26,10 @@ def filter_recs_dist(splitIndex, iterator):
                 a = datetime.strptime(row[1], "%Y-%m-%d %H:%M:%S.%f")
                 b = a + timedelta(seconds = 600)
                 yield a,b
-                
+
+sc = SparkContext()                
+#spark = HiveContext(sc)
+
 yellow = sc.textFile('/tmp/yellow.csv.gz')
 citibike = sc.textFile('/tmp/citibike.csv')
 
