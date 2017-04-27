@@ -28,7 +28,7 @@ def filter_recs_dist(splitIndex, iterator):
                 yield a,b
 
 sc = SparkContext()                
-#spark = HiveContext(sc)
+spark = HiveContext(sc)
 
 yellow = sc.textFile('/tmp/yellow.csv.gz')
 citibike = sc.textFile('/tmp/citibike.csv')
